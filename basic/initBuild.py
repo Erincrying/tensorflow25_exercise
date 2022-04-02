@@ -1,4 +1,10 @@
 import tensorflow as tf
+
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = "0" # 使用gpu
+# 查看使用设备
+from tensorflow.python.client import device_lib
+print(device_lib.list_local_devices())
 class MyDenseLayer(tf.keras.layers.Layer):
   def __init__(self, num_outputs):
     super(MyDenseLayer, self).__init__()
